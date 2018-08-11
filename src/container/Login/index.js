@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { bindActionCreators } from "redux";
 import { withRouter } from "react-router";
-import { connect } from "react-redux";
 import LoginForm from "../../component/loginForm";
 import actions from "../../Actions";
+import Wrapper from "../../HOC/wrapper";
 
 class Login extends Component {
   constructor(props) {
@@ -53,17 +52,4 @@ Login.propTypes = {
   history: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
-  users: state.users
-});
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch)
-});
-
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Login)
-);
+export default withRouter(Wrapper(Login));

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
 import RegisterForm from "../../component/registerForm";
-import actions from "../../Actions";
+import Wrapper from "../../HOC/wrapper";
 
 class Register extends Component {
   constructor(props) {
@@ -42,15 +40,4 @@ class Register extends Component {
 
 Register.propTypes = {};
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch)
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Register);
+export default Wrapper(Register);

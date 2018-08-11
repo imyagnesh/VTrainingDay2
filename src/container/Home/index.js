@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Wrapper from "../../HOC/wrapper";
 
 class Home extends Component {
   render() {
@@ -14,4 +15,4 @@ class Home extends Component {
 
 Home.propTypes = {};
 
-export default Home;
+export default Wrapper(Home);
