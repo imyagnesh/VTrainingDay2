@@ -11,10 +11,11 @@ class Register extends Component {
   }
 
   submit(data) {
-    alert(JSON.stringify(data));
     const {
       actions: { register }
     } = this.props;
+    this.props.resetForm("register");
+
     register({
       ...data,
       id: new Date().getUTCMilliseconds(),

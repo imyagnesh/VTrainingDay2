@@ -1,6 +1,29 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 
+const formArray = [
+  {
+    label: "First Name",
+    name: "firstName",
+    type: "text"
+  },
+  {
+    label: "Last Name",
+    name: "lastName",
+    type: "text"
+  },
+  {
+    label: "Email",
+    name: "email",
+    type: "email"
+  },
+  {
+    label: "Password",
+    name: "password",
+    type: "password"
+  }
+];
+
 const validate = values => {
   const errors = {};
   if (!values.firstName) {
@@ -55,22 +78,12 @@ let RegisterForm = props => {
   const { handleSubmit } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="firstName">First Name</label>
-        <Field name="firstName" component={renderField} type="text" />
-      </div>
-      <div>
-        <label htmlFor="lastName">Last Name</label>
-        <Field name="lastName" component={renderField} type="text" />
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <Field name="email" component={renderField} type="email" />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <Field name="password" component={renderField} type="password" />
-      </div>
+      {formArray.map((item, i) => (
+        <div key={i}>
+          <label htmlFor={item.name}>{item.label}</label>
+          <Field name={item.name} component={renderField} type={item.type} />
+        </div>
+      ))}
       <button type="submit">Submit</button>
     </form>
   );

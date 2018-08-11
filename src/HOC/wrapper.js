@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { reset } from "redux-form";
 import actions from "../Actions";
 
 export default WrappedComponent => {
@@ -30,7 +31,10 @@ export default WrappedComponent => {
   });
 
   const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(actions, dispatch)
+    actions: bindActionCreators(actions, dispatch),
+    resetForm: formName => {
+      dispatch(reset(formName));
+    }
   });
 
   return connect(
