@@ -1,3 +1,22 @@
 {
-  "users": []
+  "users": [
+    {
+      "firstName": "Yagnesh",
+      "lastName": "Modh",
+      "email": "yagnesh.modh@gmail.com",
+      "password": "Password1!",
+      "id": 759,
+      "created_at": "2018-08-11T06:36:40.759Z",
+      "updated_at": "2018-08-11T06:36:40.759Z"
+    },
+    {
+      "firstName": "Ashokbhai",
+      "lastName": "Modi",
+      "email": "yagnesh.modh@gmail.com",
+      "password": "Password1!",
+      "id": 867,
+      "created_at": "2018-08-11T06:38:31.867Z",
+      "updated_at": "2018-08-11T06:38:31.867Z"
+    }
+  ]
 }
