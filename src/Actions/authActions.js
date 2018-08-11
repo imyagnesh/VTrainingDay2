@@ -10,3 +10,12 @@ export function register(data) {
       .catch(err => dispatch(Action(types.REGISTER_FAIL, err)));
   };
 }
+
+export function getUser(data) {
+  return dispatch => {
+    dispatch(Action(types.USER_LOAD));
+    return Api.jsonService(url)
+      .then(res => dispatch(Action(types.USER_SUCCESS, res)))
+      .catch(err => dispatch(Action(types.USER_FAIL, err)));
+  };
+}

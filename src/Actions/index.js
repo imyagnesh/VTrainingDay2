@@ -1,4 +1,5 @@
-import { register } from "./authActions";
+import { register, getUser } from "./authActions";
 export default {
-  register
+  register,
+  getUser
 };
