@@ -7,7 +7,7 @@ class Home extends Component {
     const { state } = this.props.location;
     return (
       <div>
-        <span>{`Hello, ${state.firstName} ${state.lastName}`}</span>
+        {state && <span>{`Hello, ${state.firstName} ${state.lastName}`}</span>}
       </div>
     );
   }
